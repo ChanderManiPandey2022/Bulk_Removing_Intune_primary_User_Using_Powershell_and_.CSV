@@ -1,24 +1,22 @@
-﻿ # <Update or Change Inutne Primary User Using PowerShell>
+﻿ # <Remove  Inutne Primary User Using PowerShell>
 #.DESCRIPTION
- # <Update or Change Inutne Primary User Using PowerShell>
+ # <Remove Inutne Primary User Using PowerShell>
 #.Demo
 #<YouTube video link-->https://www.youtube.com/@ChanderManiPandey
 #.INPUTS
  # <Provide all required inforamtion in User Input Section-line No 29-30>
 #.OUTPUTS
- # <This will chage the Change Primary in Intune portal>
+ # <This will  Remove  Primary in Intune portal>
 #.NOTES
  <# Version:       1.0
   Author:          Chander Mani Pandey
-  Creation Date:   8 Oct 2023
+  Creation Date:   23 Nov 2023
   
   Find Author on 
   Youtube:-         https://www.youtube.com/@chandermanipandey8763
   Twitter:-           https://twitter.com/Mani_CMPandey
-  Facebook:-       https://www.facebook.com/profile.php?id=100087275409143&mibextid=ZbWKwL
   LinkedIn:-         https://www.linkedin.com/in/chandermanipandey
-  Reddit:-            https://www.reddit.com/u/ChanderManiPandey 
- #>
+   #>
 
 cls
 Set-ExecutionPolicy -ExecutionPolicy 'ByPass' -Scope 'Process' -Force -ErrorAction 'Stop' 
@@ -82,7 +80,7 @@ $deviceCounter = 0
 foreach ($In in $Inputfile) {
     $deviceCounter++
     
-    # Check if the new user name is equal to the old user name, and skip the update if they are the same
+    # Check and skip the update if they are the same
     if ($In.NewUserName -eq $In.userPrincipalName) {
         $message = "Skipping update for $deviceCounter/$totalDevices devices"
         Write-Host $message -ForegroundColor Yellow
